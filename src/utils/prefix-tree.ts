@@ -52,7 +52,7 @@ export default class PrefixTree {
     let node = this.store;
     word = word.toLowerCase();
 
-    for (const ch of word.split('')) {
+    for (const ch of word.trim().split('')) {
       if (!node.children[ch]) {
         node.children[ch] = { children: {} };
       }
