@@ -1,5 +1,6 @@
 import { HttpService } from '@nestjs/axios';
 import { CACHE_MANAGER, Inject, Injectable } from '@nestjs/common';
+import { Interval } from '@nestjs/schedule';
 import { Cache } from 'cache-manager';
 import { firstValueFrom } from 'rxjs';
 import PrefixTree from '../utils/prefix-tree';
@@ -17,9 +18,11 @@ export class DictionaryService {
   ) {}
 
   /**
-   * Build dictionary and store it in cache
+   * Build dictionary and store it in cache. This function runs every hour to
+   * keep the dictionary up to date.
    * @returns Promise<void>
    */
+  @Interval(1000 * 60 * 60)
   async buildDictionary() {
     console.log('Building dictionary...');
     const response = await firstValueFrom(this.httpService.get(dictionaryUrl));
