@@ -30,7 +30,9 @@ export class AppService {
     }
 
     const { sentence } = reqDto;
-    const words = sentence.split(' ');
+
+    // Split sentence for whitespaces and newlines
+    const words = sentence.split(/\s+/);
 
     // Regex to strip out punctuation for start and end of word
     const regex = /^[\W_]+|[\W_]+$/g;
