@@ -14,6 +14,11 @@ bash ./install.sh
 docker compose up api
 ```
 
+You can try out the production build with nginx proxy using the following commands:
+```bash
+docker compose up api-nginx
+```
+
 ## Endpoints
 
 This API contains one endpoint `/check-sentence` which takes a sentence and returns the list of non-english words in it.
