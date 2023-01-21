@@ -4,7 +4,15 @@ NestJS API for checking if a sentence contains non-english words.
 
 ## Installation
 
-Recommended way is to pull the word-check-localdev repository to run this project.
+Recommended way is to pull the [word-check-localdev](https://github.com/aswasif007TT/word-check-localdev) repository to run this project.
+
+```bash
+mkdir ~/word-check
+cd ~/word-check
+git clone https://github.com/aswasif007TT/word-check-localdev
+bash ./install.sh
+docker compose up api
+```
 
 ## Endpoints
 
